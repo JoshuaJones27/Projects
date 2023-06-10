@@ -6,9 +6,14 @@ import tensorflow as tf
 import json
 import pickle
 import random
+import os
+
+print(os.getcwd())
+nltk.download('punkt')
+
 
 # Loading intents.json
-with open('intents.json') as intents:
+with open('C:/Users/ossie/Desktop/Projects/Python/Chatbot/intents.json') as intents:
     data = json.load(intents)
 
 stemmer = LancasterStemmer()
@@ -31,7 +36,7 @@ for intent in data['intents']:
 
 # Stemming the words and removing duplicate elements
 
-words = [stemmer.stew(w.lower()) for w in words if w not in "?"]
+words = [stemmer.stem(w.lower()) for w in words if w not in "?"]
 words = sorted(list(set(words)))
 labels = sorted(labels)
 
@@ -43,7 +48,7 @@ out_empty = [0 for _ in range(len(labels))]
 
 for x, doc in enumerate(x_docs):
     bag = []
-    wrds = [stemmer.stew(w) for w in doc]
+    wrds = [stemmer.stem(w) for w in doc]
     for w in words:
         if w in wrds:
             bag.append(1)
