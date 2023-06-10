@@ -3,19 +3,19 @@ from bs4 import BeautifulSoup as bs
 import csv
 
 # Making a GET request
-#r = requests.get('https://editorial.rottentomatoes.com/guide/best-netflix-movies-to-watch-right-now/')
+# r = requests.get('https://editorial.rottentomatoes.com/guide/best-netflix-movies-to-watch-right-now/')
 # r = requests.get('https://www.geeksforgeeks.org/python-programming-language/')
 
 # check status code for response received
 # success code - 200
 # print(r)
- 
+
 # # print content of request
 # print(r.content)
 
 # # print request object
 # print(r.url)
-   
+
 # # print status code
 # print(r.status_code)
 
@@ -45,7 +45,7 @@ import csv
 # for line in lines:
 #     print(line.text)
 
-## find all the anchor tags with "href"
+# find all the anchor tags with "href"
 # for link in soup.find_all('a'):
 #     print(link.get('href'))
 
@@ -60,21 +60,21 @@ import csv
 #     print(image)
 
 # URL = 'https://www.geeksforgeeks.org/page/'
- 
+
 # req = requests.get(URL)
 # soup = bs(req.text, 'html.parser')
- 
+
 # titles = soup.find_all('div',attrs = {'class','head'})
- 
+
 # print(titles[4].text)
 
 # for page in range(1, 10):
- 
+
 #     req = requests.get(URL + str(page) + '/')
 #     soup = bs(req.text, 'html.parser')
- 
+
 #     titles = soup.find_all('div', attrs={'class', 'head'})
- 
+
 #     for i in range(4, 19):
 #         if page > 1:
 #             print(f"{(i-3)+page*15}" + titles[i].text)
@@ -87,7 +87,7 @@ import csv
 # for url in range(0,2):
 #     req = requests.get(URL[url])
 #     soup = bs(req.text, 'html.parser')
- 
+
 #     titles = soup.find_all('div',attrs={'class','head'})
 #     for i in range(4, 19):
 #         if url+1 > 1:
@@ -115,5 +115,5 @@ import csv
 # with open(filename, 'w', newline='') as f:
 #     w = csv.DictWriter(f,['Title Number','Title Name'])
 #     w.writeheader()
-    
+
 #     w.writerows(titles_list)
